@@ -1,0 +1,16 @@
+*, *:before, *:after {
+  position: relative;
+  box-sizing: border-box; }
+
+body, html {
+  display: block;
+  margin: 0;
+  background: #000; }
+
+header {
+  background: #000; }
+
+#feed .feed-item img {
+  width: 200px; }
+
+/*# sourceMappingURL=main.css.map */
