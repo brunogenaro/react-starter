@@ -3,8 +3,98 @@
 <head>
   <meta charset="UTF-8">
   <title>React Hack Night</title>
+
+	<link rel="stylesheet" href="assets/css/main.css">
+
 </head>
 <body>
   <main id="app"></main>
+
+	<header>
+		<img src="assets/images/logo.svg" />
+	</header>
+
+	<div id="feed">
+		<div class="feed-item">
+			<img src="assets/images/image-1.jpg" />
+		</div>
+		<div class="feed-item">
+			<img src="assets/images/image-2.jpg" />
+		</div>
+		<div class="feed-item">
+			<img src="assets/images/image-3.jpg" />
+		</div>
+		<div class="feed-item">
+			<img src="assets/images/image-4.jpg" />
+		</div>
+		<div class="feed-item">
+			<img src="assets/images/image-5.jpg" />
+		</div>
+		<div class="feed-item">
+			<img src="assets/images/image-6.jpg" />
+		</div>
+		<div class="feed-item">
+			<img src="assets/images/image-7.jpg" />
+		</div>
+		<div class="feed-item">
+			<img src="assets/images/image-8.jpg" />
+		</div>
+		<div class="feed-item">
+			<img src="assets/images/image-9.jpg" />
+		</div>
+		<div class="feed-item">
+			<img src="assets/images/image-10.jpg" />
+		</div>
+		<div class="feed-item">
+			<img src="assets/images/image-11.jpg" />
+		</div>
+		<div class="feed-item">
+			<img src="assets/images/image-1.jpg" />
+		</div>
+		<div class="feed-item">
+			<img src="assets/images/image-2.jpg" />
+		</div>
+		<div class="feed-item">
+			<img src="assets/images/image-3.jpg" />
+		</div>
+		<div class="feed-item">
+			<img src="assets/images/image-4.jpg" />
+		</div>
+		<div class="feed-item">
+			<img src="assets/images/image-5.jpg" />
+		</div>
+		<div class="feed-item">
+			<img src="assets/images/image-6.jpg" />
+		</div>
+		<div class="feed-item">
+			<img src="assets/images/image-7.jpg" />
+		</div>
+		<div class="feed-item">
+			<img src="assets/images/image-8.jpg" />
+		</div>
+		<div class="feed-item">
+			<img src="assets/images/image-9.jpg" />
+		</div>
+		<div class="feed-item">
+			<img src="assets/images/image-10.jpg" />
+		</div>
+		<div class="feed-item">
+			<img src="assets/images/image-11.jpg" />
+		</div>
+	</div>
+
+	<script src="assets/js/masonry.min.js"></script>
+
+	<script>
+
+		var msnry = new Masonry( '#feed', {
+		  columnWidth: 50,
+		  itemSelector: '.feed-item',
+		  gutter: 1,
+		  percentPosition: true
+		});
+
+	</script>
+
 </body>
 </html>
