@@ -45,9 +45,6 @@ module.exports = {
           'sass?sourceMap'
         )
       },
-      {
-        test: /\.(png|jpg)$/, loader: 'file-loader?name=styles/[name].[ext]'
-      }
     ],
   },
 
