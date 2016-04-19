@@ -2,9 +2,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import Header from './components/containers/Header';
-import Feed from './components/containers/Feed';
-
 // Import styles like this:
 import './styles/main.scss';
 
@@ -14,12 +11,25 @@ import Home from './components/home-component';
 class App extends React.Component {
   constructor(props) {
     super(props);
+
+    this.state = {
+      geolocation: {},
+      idToken: {}
+    }
   }
 
   componentWillMount() {
     this.lock = new Auth0Lock('avnScC3lLTwclT9yvEC4eU4zuPPBqrIc', 'foodfeed.auth0.com');
 
     this.setState({idToken: this.getIdToken()});
+  }
+
+  getLocation() {
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(showPosition);
+    } else {
+        x.innerHTML = "Geolocation is not supported by this browser.";
+    }
   }
 
   getIdToken() {
@@ -46,20 +56,11 @@ class App extends React.Component {
   }
 
   render() {
-<<<<<<< HEAD
-    return (
-    	<div>
-      		<Header />
-      		<Feed />
-      	</div>
-    );
-=======
       if (this.state.idToken) {
         return (<LoggedIn lock={this.lock} idToken={this.state.idToken} />);
       } else {
         return (<Home lock={this.lock} />);
       }
->>>>>>> origin/master
   }
 }
 
