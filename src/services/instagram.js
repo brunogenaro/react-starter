@@ -29,8 +29,7 @@ export default class instagram {
   search() {
     return new Promise((resolve, reject) => {
       this.instagram.getAllPosts()
-        .then(this.getPostsWithLocations)
-        .then(resolve(data));
+        .then(resolve(this.getPostsWithLocations));
     });
   }
 }
