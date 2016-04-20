@@ -72,7 +72,7 @@ class App extends React.Component {
 
   render() {
       if (this.state.idToken) {
-        return (<LoggedIn lock={this.lock} idToken={this.state.idToken} />);
+        return (<LoggedIn lock={this.lock} idToken={this.state.idToken} geolocation={this.state.geolocation} />);
       } else {
         return (<Home lock={this.lock} />);
       }

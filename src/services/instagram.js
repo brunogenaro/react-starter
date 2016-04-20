@@ -1,4 +1,5 @@
 import superagent from 'superagent';
+import jsonp from 'superagent-jsonp';
 import {find} from 'lodash';
 
 export default class instagram {
@@ -18,6 +19,7 @@ export default class instagram {
           lng: this.lng,
           distance: 5000
         })
+        .use(jsonp)
         .end((err, { body } = {}) => err ? reject(body || err) : resolve(body));
     });
   }
@@ -28,8 +30,10 @@ export default class instagram {
 
   search() {
     return new Promise((resolve, reject) => {
-      this.instagram.getAllPosts()
-        .then(resolve(this.getPostsWithLocations));
+      this.getAllPosts()
+        .then((posts) => {
+          resolve(this.getPostsWithLocations(posts))
+        });
     });
   }
 }
