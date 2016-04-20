@@ -20,6 +20,7 @@
   "homepage": "https://github.com/OrlandoDevs/react-starter#readme",
   "dependencies": {
     "install": "^0.6.1",
+    "lodash": "^4.11.1",
     "npm": "^3.8.6",
     "react": "^15.0.1",
     "react-dom": "^15.0.1",

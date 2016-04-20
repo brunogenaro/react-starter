@@ -1,18 +1,16 @@
 import superagent from 'superagent';
+import _ from lodsh
 
 export default class foursquare {
   constructor(clientId, clientSecret) {
     this.clientId = clientId;
     this.clientSecret = clientSecret;
-    this.lat = lat;
-    this.lng = lng;
     this.baseUrl = 'https://api.foursquare.com/v2/venues/search';
   }
 
   search(query) {
     return new Promise((resolve, reject) => {
-      superagent
-        .get(this.baseUrl)
+      superagent.get(this.baseUrl)
         .query({
           query: query,
           near: 'Orlando, FL',
