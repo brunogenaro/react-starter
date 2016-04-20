@@ -7,6 +7,7 @@ import './styles/main.scss';
 
 // Import dependencies like this:
 import Home from './components/home-component';
+import LoggedIn from './components/loggedin-component';
 
 class App extends React.Component {
   constructor(props) {
@@ -18,18 +19,32 @@ class App extends React.Component {
     }
   }
 
+  componentDidMount() {
+    // asks for the geolocation as soon the apps render
+    this.getLocation();
+  }
+
   componentWillMount() {
     this.lock = new Auth0Lock('avnScC3lLTwclT9yvEC4eU4zuPPBqrIc', 'foodfeed.auth0.com');
 
     this.setState({idToken: this.getIdToken()});
   }
 
+  // Get user's geolocation
   getLocation() {
     if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(showPosition);
-    } else {
-        x.innerHTML = "Geolocation is not supported by this browser.";
+      navigator.geolocation.getCurrentPosition(this.saveGeolocation.bind(this));
     }
+  }
+
+  // Save geolocation into our state
+  saveGeolocation(position) {
+    this.setState({
+      geolocation: {
+        latitude: position.coords.latitude,
+        longitude: position.coords.longitude
+      }
+    });
   }
 
   getIdToken() {
